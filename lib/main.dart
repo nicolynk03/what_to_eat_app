@@ -31,7 +31,29 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'What to Eat?'),
+      // home: const MyHomePage(title: 'What to Eat?'),
+      home: DefaultTabController(
+        length: 3, 
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: const TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.list_alt_rounded)),
+                Tab(icon: Icon(Icons.question_mark_rounded)),
+                Tab(icon: Icon(Icons.lightbulb)),
+              ],
+            ),
+            title: const Text("What to Eat? Homepage"),
+          ),
+          body: const TabBarView(
+            children: [
+              Icon(Icons.list_alt_rounded),
+              Icon(Icons.question_mark_rounded),
+              Icon(Icons.lightbulb),
+            ],
+          ),
+        )
+      )
     );
   }
 }
