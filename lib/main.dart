@@ -36,13 +36,6 @@ class MyApp extends StatelessWidget {
         length: 3, 
         child: Scaffold(
           appBar: AppBar(
-            bottom: const TabBar(
-              tabs: [
-                Tab(icon: Icon(Icons.list_alt_rounded)),
-                Tab(icon: Icon(Icons.question_mark_rounded)),
-                Tab(icon: Icon(Icons.lightbulb)),
-              ],
-            ),
             title: const Text("What to Eat? Homepage"),
           ),
           body: const TabBarView(
@@ -51,6 +44,15 @@ class MyApp extends StatelessWidget {
               Icon(Icons.question_mark_rounded),
               Icon(Icons.lightbulb),
             ],
+          ),
+          bottomNavigationBar: const TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.list_alt_rounded)),
+              Tab(icon: Icon(Icons.question_mark_rounded)),
+              Tab(icon: Icon(Icons.lightbulb)),
+            ],
+            labelColor: Colors.green,
+            unselectedLabelColor: Colors.grey,
           ),
         )
       )
